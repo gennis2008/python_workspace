@@ -35,7 +35,19 @@ def info(self):
 
 # 使用info对象对p的的foo方法赋值(动态增加方法)
 p.foo = info
-
+#python不会自动将调用者绑定到第一个参数
+#因此程序需要手动将调用者绑定到第一个参数
 p.foo(p)
 
+#使用lambda表达式为p对象的bar方法赋值（动态增加方法）
+p.bar = lambda self:print("---lambda表达式----",self)
+p.bar(p)
 
+def intro_func(self,content):
+    print ("我是一个人，信息为：%s" % content)
+# 导入MethodType
+from types import MethodType
+#使用MethodType对intro_func进行包装，将函数的第一个参数绑定为p
+p.intro = MethodType(intro_func,p)
+#第一参数已绑定了，无需传入
+p.intro("生活在别处")
