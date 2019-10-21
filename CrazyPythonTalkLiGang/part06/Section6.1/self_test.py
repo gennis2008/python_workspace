@@ -2,10 +2,9 @@ class User:
     def test(self):
         print("self参数：",self)
 
-u = user()
+u = User()
 #以方法形式调用test()方法
 u.test()
 #将User对象的test方法赋值给foo变量
 foo = u.test
-
-
+foo()
