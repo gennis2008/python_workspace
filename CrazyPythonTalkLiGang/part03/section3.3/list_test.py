@@ -1,0 +1,13 @@
+a_tuple = ('crazyit',20,-1.2)
+a_list = list(a_tuple)
+print(a_list)
+print(a_tuple)
+print(type(a_list))
+print(type(a_tuple))
+
+a_range = range(1,5)
+print(a_range)
+b_list = list(a_range)
+print(b_list)
+c_list = list(range(4,20,3))
+print(c_list)
